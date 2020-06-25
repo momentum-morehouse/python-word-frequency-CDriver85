@@ -30,3 +30,48 @@ if __name__ == "__main__":
     else:
         print(f"{file} does not exist!")
         exit(1)
+# attemp 2
+
+import re
+import string
+frequency = {}  #empty dictionary
+file_object = open("real_love.txt","r") #enables the program open &  read love
+text_string = file_object.read().lower()
+match_pattern = re.findall(r'\b[a-z]{1,15}\b',text_string) #enables program to read  words called in  line 67
+
+STOP_WORDS = [
+    'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'has', 'he',
+    'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
+    'will', 'with'
+]
+
+
+
+print(text_string)
+def remove_stopwords(review_words):
+    with open('Stop_words.txt') as stopfile:
+        stopwords = stopfile.read()
+    list = stopwords.split()
+    print(list)
+    with open('a.txt') as workfile:
+        read_data = workfile.read()
+        data = read_data.split()
+        print(data)
+        for word1 in list:
+            for word2 in data:
+                if word1 == word2:
+                    return data.remove(list)
+                    print(remove_stopwords)
+for word in match_pattern:
+    count = frequency.get(word, 0)  #word is key, value = 0
+    frequency[word] = count + 1
+frequency_list = frequency.keys()
+for words in frequency_list:
+    print(words,frequency[words])
+
+from gensim.parsing.preprocessing import remove_stopwords
+
+text = 'stop_words.txt'
+filtered_sentence = remove_stopwords(text)
+
+print(filtered_sentence)
