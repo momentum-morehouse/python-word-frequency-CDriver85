@@ -1,9 +1,18 @@
-STOP_WORDS = [
+import re
+import string
+# empty dictionay
+frequency = {} 
+file_object = open("real_love.txt","r") #initiates program 
+text_string = file_object.read().lower()
+match_pattern = re.findall(r'\b[a-z]{1,15}\b',text_string)
+    
+    STOP_WORDS = [
     'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'has', 'he',
     'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
     'will', 'with'
 ]
 
+from gensim.parsing.preprocessing import STOPWORDS
 
 def print_word_freq(file):
     """Read in `file` and print out the frequency of words in that file."""
