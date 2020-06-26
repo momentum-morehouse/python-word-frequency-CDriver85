@@ -6,7 +6,7 @@ file_object = open("real_love.txt","r") #initiates program
 text_string = file_object.read().lower()
 match_pattern = re.findall(r'\b[a-z]{1,15}\b',text_string)
     
-    STOP_WORDS = [
+STOP_WORDS = [
     'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'has', 'he',
     'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
     'will', 'with'
